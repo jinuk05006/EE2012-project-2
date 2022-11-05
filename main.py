@@ -78,9 +78,21 @@ def inverse_transformation():
     plt.ylabel("f(x)")
     plt.legend()
     plt.show()   
-    repeat = input("Do you want to generate another set of graph? (y/n)")
+    repeat = input("Do you want to generate another set of graph? (y/n)\n")
     if repeat=="y":
         continue
     if repeat=="n":
         break
   return
+
+def script_switch():
+    while True:
+        response = input("Script for question 1 or 2 (y for question 1, n for question 2)\n")
+        if response == "y":
+            plotting_equation()
+        elif response == "n":
+            inverse_transformation()
+        else:
+            return False
+
+script_switch()
