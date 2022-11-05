@@ -71,6 +71,7 @@ def inverse_transformation():
     
     data_x = np.random.uniform(0,1,1000)
     data_y = the_inv_equation(data_x)
+    print(data_y)
     plt.plot(x_pdf, y_pdf, color='g', label="pdf when t=4") 
     plt.hist(data_y, 100, density=True)
     plt.title("Normalised histogram mapped onto pdf graph") 
