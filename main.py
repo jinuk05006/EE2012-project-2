@@ -60,4 +60,27 @@ def plotting_equation():
   return   
     
     
-print(plotting_equation())
+def inverse_transformation():
+  while True:
+    x_pdf= np.linspace(0,40,1000)
+    def the_inv_equation(x):
+        return -4*np.log(1-x)
+    def the_pdf_eq(t, x):
+        return (1/t)*np.exp(-(x/t))
+    y_pdf = the_pdf_eq(4,x_pdf)
+    
+    data_x = np.random.uniform(0,1,1000)
+    data_y = the_inv_equation(data_x)
+    plt.plot(x_pdf, y_pdf, color='g', label="pdf when t=4") 
+    plt.hist(data_y, 100, density=True)
+    plt.title("Normalised histogram mapped onto pdf graph") 
+    plt.xlabel("x value")
+    plt.ylabel("f(x)")
+    plt.legend()
+    plt.show()   
+    repeat = input("Do you want to generate another set of graph? (y/n)")
+    if repeat=="y":
+        continue
+    if repeat=="n":
+        break
+  return
