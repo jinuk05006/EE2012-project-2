@@ -8,6 +8,7 @@ def plotting_equation():
   while True:
     x = np.linspace(0,40,1000)
     x_fill=np.linspace(5,40, 1000)
+    
     function=input("Please key in pdf or cdf.\n")
     print(f"your input is {function}.\n")
     def the_pdf_eq(t, x):
@@ -19,9 +20,11 @@ def plotting_equation():
     y_p=integrad_eq(lambda x:the_pdf_eq(3,x), 5, np.inf)
     z_p=integrad_eq(lambda x:the_pdf_eq(4,x), 5, np.inf)
     a_p=integrad_eq(lambda x:the_pdf_eq(5,x), 5, np.inf)
+
     print(f"The p when lambda is 1/3 is {y_p}.\n")
     print(f"The p when lambda is 1/4 is {z_p}.\n")
     print(f"The p when lambda is 1/5 is {a_p}.\n")
+
     if function=="pdf":
         y = the_pdf_eq(3,x)
         z = the_pdf_eq(4,x)
@@ -44,6 +47,7 @@ def plotting_equation():
         plt.plot(x, y, color='r', label=f"t=3 ; lambda=1/3 , p={y_p}")
         plt.plot(x, z, color='g', label=f"t=4 ; lambda=1/4 , p={z_p}")
         plt.plot(x, a, color="b", label=f"t=5 ; lambda=1/5 , p={a_p}")
+        
         plt.xlabel("x value")
         plt.ylabel(f"{function}")
         plt.title(f"{function} Graphs at different lambda values")
@@ -52,3 +56,4 @@ def plotting_equation():
     plt.show()
     
 print(plotting_equation())
+
