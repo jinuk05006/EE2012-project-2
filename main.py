@@ -89,10 +89,10 @@ def inverse_transformation():
 
 def script_switch():
     while True:
-        response = input("Script for question 1 or 2 (y for question 1, n for question 2)\n")
-        if response == "y":
+        response = input("Script for question 1 or 2 (1 for question 1, 2 for question 2, exit to exit)\n")
+        if response == "1":
             plotting_equation()
-        elif response == "n":
+        elif response == "2":
             inverse_transformation()
         else:
             return False
