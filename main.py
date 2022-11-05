@@ -9,7 +9,9 @@ def plotting_equation():
     x = np.linspace(0,40,1000)
     x_fill=np.linspace(5,40, 1000)
     
-    function=input("Please key in pdf or cdf.\n")
+    function=input("Please key in pdf or cdf.(type exit to quit)\n")
+    if function=='exit':
+        break
     print(f"your input is {function}.\n")
     def the_pdf_eq(t, x):
         return (1/t)*np.exp(-(x/t))
@@ -54,6 +56,8 @@ def plotting_equation():
         
     plt.legend()
     plt.show()
+
+  return   
+    
     
 print(plotting_equation())
-
