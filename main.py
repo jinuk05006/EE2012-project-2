@@ -79,6 +79,7 @@ def inverse_transformation():
     plt.ylabel("f(x)")
     plt.legend()
     plt.show()   
+    
     repeat = input("Do you want to generate another set of graph? (y/n)\n")
     if repeat=="y":
         continue
